@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Tuck</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="core.js" defer></script>
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="top"><div class="identity"><img class="brand-icon" src="icons/icon48.png" alt=""><div><h1>Tuck</h1><p>Pick up where you left off.</p></div></div><span class="version">1.0</span></header>
+    <button id="save" class="primary">+ Save current window</button>
+    <div class="tabs" role="tablist" aria-label="Session type"><button class="tab active" id="saved-tab" role="tab" aria-selected="true">Saved sessions</button><button class="tab" id="recovery-tab" role="tab" aria-selected="false">Recovery</button></div>
+    <div class="search-wrap"><input id="search" type="search" placeholder="Search sessions or tabs" aria-label="Search sessions or tabs"></div>
+    <div class="heading"><span id="count">0 sessions</span><span id="storage-label">Stored on this browser</span></div>
+    <div id="sessions" class="session-list" aria-live="polite"></div>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <footer>Local only · No account needed</footer>
+  </main>
+  <dialog id="save-dialog"><form id="save-form"><h2>Save session</h2><label for="session-name">Session name</label><input id="session-name" maxlength="80" required autocomplete="off"><p id="tab-info" class="muted"></p><label class="check"><input id="close-tabs" type="checkbox"> Close saved tabs after saving</label><p class="muted">Pinned tabs are kept open. Only regular web pages can be saved.</p><div class="dialog-actions"><button type="button" class="quiet" data-cancel>Cancel</button><button class="primary" type="submit">Save</button></div></form></dialog>
+  <dialog id="rename-dialog"><form id="rename-form"><h2>Rename session</h2><label for="rename-name">Session name</label><input id="rename-name" maxlength="80" required><div class="dialog-actions"><button type="button" class="quiet" data-cancel>Cancel</button><button class="primary" type="submit">Rename</button></div></form></dialog>
+  <dialog id="delete-dialog"><form id="delete-form"><h2>Delete session?</h2><p class="muted">This cannot be undone.</p><div class="dialog-actions"><button type="button" class="quiet" data-cancel>Cancel</button><button class="danger" type="submit">Delete</button></div></form></dialog>
+</body>
+</html>
